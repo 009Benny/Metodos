@@ -1,0 +1,40 @@
+div{
+  display: block;
+  text-align: center;
+  font-family: 'roboto', 'arial';
+}
+body, h1, h2, h3, p{
+  margin: 0;
+  font-family: 'roboto', arial;
+}
+input{
+  font-size: 14px;
+  font-weight: 16px;
+  font-family: 'Source Sans Pro', arial;
+  font-style: italic;
+}
+.body-container{
+  .content{
+    text-align: center;
+    width: auto;
+  }
+}
+h1{
+  margin: 20px 0;
+}
+.columns-container{
+  width: auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1300px;
+  @include three-column{
+    max-width: 980px;
+  }
+  @include two-column{
+    max-width: 660px;
+  }
+  @include one-column{
+    max-width: 325px;
+  }
+}

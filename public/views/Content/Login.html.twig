@@ -1,0 +1,19 @@
+{% extends './Base/base.html.twig' %}
+
+{% block metas %}
+<title>{{ title }}</title>
+{% endblock %}
+
+{% block body %}
+<div class="columns-container">
+  <div class="title-container">
+    <h1>{{ title }}</h1>
+  </div>
+  {% if modules is defined %}
+    {% for item in modules %}
+      {% set type = item.type|split('_') %}
+      {% include './Modules/'~ type.0 ~'/'~ type.1 ~'.html.twig' ignore missing with {module: item.modules} %}
+    {% endfor %}
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+.calculator-container{
+  margin-bottom: 10px;
+  display: block;
+  padding: 0 20%;
+  .input-function-container{
+    text-align: left;
+    span{
+      font-size: 20px;
+    }
+    input{
+      font-size: 20px;
+      width: 100%;
+    }
+  }
+}
