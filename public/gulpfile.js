@@ -18,6 +18,16 @@ var paths = [
   'scss/Modules/**/*.scss',
 ];
 
+var all = [
+  'scss/main/main.scss',
+  'scss/Modules/global.scss',
+  'scss/Modules/main-colors.scss',
+  'scss/Modules/media-queries.scss',
+  'scss/Modules/**/*.scss',
+  'js/main.js',
+  'js/Classes/*.js',
+]
+
 gulp.task('sass',function(){
   return gulp.src('./scss/main/main.scss')
     .pipe(sass({ outputStyle: 'compressed' }).on("error",sass.logError))
@@ -58,6 +68,11 @@ gulp.task('watch', function(){
 gulp.task('watch-webpack', function(){
   // gulp.watch(paths, ['webpack', 'sass']);
   gulp.watch(pathsJS, gulp.series('webpack'));
+});
+
+gulp.task('watch-webpack', function(){
+  // gulp.watch(paths, ['webpack', 'sass']);
+  gulp.watch(all, gulp.series('webpack','sass'));
 });
 
 // gulp.task('default',["sass","webpack"]);

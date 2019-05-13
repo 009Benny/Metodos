@@ -6,9 +6,14 @@ $modules = array(
     'title'    => 'Ingresa la funcion',
   ),
   array(
-    'type'     => 'block_calculator',
-    'template' => 'cientific',
+    'type'     => 'cnt_selectors',
+    'template' => 'methods'
   )
+  //
+  // array(
+  //   'type'     => 'block_calculator',
+  //   'template' => 'cientific',
+  // )
 );
 
 require_once './vendor/autoload.php';
