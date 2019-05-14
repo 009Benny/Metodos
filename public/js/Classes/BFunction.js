@@ -15,17 +15,7 @@ class BFunction{
         init = 0,
         end = 0;
     var characters = fun.split('');
-    console.log(characters);
-    for (var i = 0; i <= characters.length; i++) {
-      console.log(characters[i]);
-      console.log('flag: '+flag);
-      console.log('init: '+init);
-      console.log('end: '+end);
-      if(end == 1){
-        content = fun.substring(init,end);
-        contents.push(content);
-        end = 0;
-      }
+    for (var i = 0; i < characters.length; i++) {
       if(characters[i] == '('){
         flag++;
         if(init == 0){
@@ -38,8 +28,20 @@ class BFunction{
           end = i;
         }
       }
+      console.log('ch: '+characters[i]);
+      console.log('end: '+end);
+      console.log('init: '+init);
+      console.log('flag: '+flag);
+      if(end != 0){
+        content = fun.substring(init+1,end);
+        console.log(content);
+        contents.push(content);
+        end = 0;
+      }
     }
-    console.log(contents);
+    for (var i = 0; i < contents.length; i++) {
+      contents[i]
+    }
     return contents;
   }
 
